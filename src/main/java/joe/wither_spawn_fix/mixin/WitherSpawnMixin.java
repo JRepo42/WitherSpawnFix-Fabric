@@ -21,15 +21,6 @@ public class WitherSpawnMixin {
 
 	@Inject(at = @At("HEAD"), cancellable = true, method = "getWitherBossPattern")
 	private static void witherSpawnFix$getWitherBossPattern(CallbackInfoReturnable<BlockPattern> cir) {
-		/*
-		if (witherBossPattern == null) {
-			witherBossPattern = BlockPatternBuilder.start().aisle(new String[]{"^^^", "###", "~#~"}).where('#', (pos) -> {
-				return pos.getBlockState().isIn(BlockTags.WITHER_SUMMON_BASE_BLOCKS);
-			}).where('^', CachedBlockPosition.matchesBlockState(BlockStatePredicate.forBlock(Blocks.WITHER_SKELETON_SKULL).or(BlockStatePredicate.forBlock(Blocks.WITHER_SKELETON_WALL_SKULL)))).where('~', pos -> !pos.getBlockState().getMaterial().isSolid()).build();
-		}
-
-		 */
-
 		if (witherBossPattern == null) {
 			witherBossPattern = BlockPatternBuilder.start().aisle(new String[]{"^^^", "###", "~#~"}).where('#', (pos) -> {
 				return pos.getBlockState().isIn(BlockTags.WITHER_SUMMON_BASE_BLOCKS);
